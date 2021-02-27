@@ -6,7 +6,7 @@
 An app that allows user to quiz themselves on a question and see the correct answer afterwards. Users can reset the question and answers, and toggle the visibility of the answer choices.
 
 ### App Walk-though
-<img src="https://imgur.com/vWTUh8O" width=200><br>
+<img src="https://imgur.com/a/urFEUO5" width=200><br>
 
 `TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
 
