@@ -5,9 +5,7 @@
 ### App Description
 An app that allows user to quiz themselves on a question and see the correct answer afterwards. Users can reset the question and answers, and toggle the visibility of the answer choices.
 
-### App Walk-though
-<img src=https://i.imgur.com/sxmjpa0.gif" width=200><br>
-                                         
+### App Walk-though                                        
 <img src="https://i.imgur.com/vWTUh8O.gif5" width=200><br>
 
 ## Required
