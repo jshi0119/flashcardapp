@@ -6,6 +6,7 @@
 An app that allows user to quiz themselves on a question and see the correct answer afterwards. Users can reset the question and answers, and toggle the visibility of the answer choices.
 
 ### App Walk-though
+<img src=https://i.imgur.com/sxmjpa0.gif" width=200><br>
 <img src="https://i.imgur.com/vWTUh8O.gif5" width=200><br>
 
 ## Required
@@ -15,7 +16,7 @@ An app that allows user to quiz themselves on a question and see the correct ans
 - [x] Build in logic to show the answer side when the card is tapped
 - [x] Push code to GitHu
 ## Optional
-- [x] toggle the flashcard between the question side and the answer side
+- [ ] toggle the flashcard between the question side and the answer side
 - [ ] Style the question and answer side of the card to better distinguish between the two sides
 - [x] Add selectable multiple choice answers beneath the card
 - [x] Change text color of the multiple choice answers when clicked to indicate whether the question waanswered correctly
