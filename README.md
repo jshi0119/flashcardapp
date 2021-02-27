@@ -7,6 +7,7 @@ An app that allows user to quiz themselves on a question and see the correct ans
 
 ### App Walk-though
 <img src=https://i.imgur.com/sxmjpa0.gif" width=200><br>
+                                         
 <img src="https://i.imgur.com/vWTUh8O.gif5" width=200><br>
 
 ## Required
