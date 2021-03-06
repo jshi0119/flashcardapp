@@ -18,4 +18,73 @@
         android:layout_marginTop="25dp"
         android:layout_alignParentEnd="true" />
 
+    <!--Question Input-->
+    <EditText
+        android:id="@+id/questionInput"
+
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+
+        android:backgroundTint="#B47CF4"
+        android:textCursorDrawable="@drawable/purple_cursor"
+        android:inputType="textMultiLine"
+        android:hint="Enter the question here" />
+
+    <!--Answer Choice 1 Input-->
+    <EditText
+        android:id="@+id/answerInput1"
+
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/questionInput"
+
+        android:backgroundTint="#B47CF4"
+        android:textCursorDrawable="@drawable/purple_cursor"
+        android:inputType="textMultiLine"
+        android:hint="Enter the correct answer here"/>
+
+    <!--Answer Choice 2 Input-->
+    <EditText
+        android:id="@+id/answerInput2"
+
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/answerInput1"
+
+        android:backgroundTint="#B47CF4"
+        android:textCursorDrawable="@drawable/purple_cursor"
+        android:inputType="textMultiLine"
+        android:hint="Enter an incorrect answer here"/>
+
+    <!--Answer Choice 3 Input-->
+    <EditText
+        android:id="@+id/answerInput3"
+
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/answerInput2"
+
+        android:backgroundTint="#B47CF4"
+        android:textCursorDrawable="@drawable/purple_cursor"
+        android:inputType="textMultiLine"
+        android:hint="Enter an incorrect answer here"/>
+
+    <!--Answer Choice 4 Input-->
+    <EditText
+        android:id="@+id/answerInput4"
+
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/answerInput3"
+
+        android:backgroundTint="#B47CF4"
+        android:textCursorDrawable="@drawable/purple_cursor"
+        android:inputType="textMultiLine"
+        android:hint="Enter an incorrect answer here"/>
+
 </RelativeLayout>

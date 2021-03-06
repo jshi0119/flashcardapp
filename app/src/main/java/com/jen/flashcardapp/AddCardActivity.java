@@ -13,6 +13,7 @@ public class AddCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_card);
 
+        //When cancel icon clicked, return to main activity
         ((ImageView)findViewById(R.id.cancelIcon)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
