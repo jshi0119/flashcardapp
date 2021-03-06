@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         TextView choice3 = findViewById(R.id.answer3);
         TextView choice4 = findViewById(R.id.answer4);
 
+        //When correct answer is selected, change correct answer font color to green
         correctAns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,10 +28,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //When incorrect answer is selected
         wrong(choice2, correctAns);
         wrong(choice3, correctAns);
         wrong(choice4, correctAns);
 
+        //When refresh icon is clicked, return all answer choices to original state (black font)
         ((ImageView)findViewById(R.id.refreshIcon)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //When visibility icon is clicked, show all answer choices
         ((ImageView)findViewById(R.id.visibleIcon)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //When invisibility icon is clicked, hide all answer choices
         ((ImageView)findViewById(R.id.invisibleIcon)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Helper method for when the incorrect answer is clicked.
+     * Change font color of selected incorrect answer to red
+     * and reveal correct answer by changing correct answer font to green.
+     *
+     * @param wrongChoice the incorrect choice that was selected
+     * @param rightChoice the correct answer choice
+     */
     private static void wrong(TextView wrongChoice, TextView rightChoice) {
         wrongChoice.setOnClickListener(new View.OnClickListener() {
             @Override
