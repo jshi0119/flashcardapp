@@ -1,5 +1,6 @@
 package com.jen.flashcardapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -69,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
 
                 ((ImageView)findViewById(R.id.visibleIcon)).setVisibility(View.VISIBLE);
                 ((ImageView)findViewById(R.id.invisibleIcon)).setVisibility(View.INVISIBLE);
+            }
+        });
+
+        ((ImageView)findViewById(R.id.addIcon)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddCardActivity.class);
+                MainActivity.this.startActivity(intent);
             }
         });
     }

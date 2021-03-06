@@ -106,7 +106,7 @@
 
         android:layout_below="@id/answer4"
         android:layout_marginTop="25dp"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerHorizontal="true" />
 
     <!--Invisibility Icon-->
     <ImageView
@@ -117,9 +117,19 @@
 
         android:layout_below="@id/answer4"
         android:layout_marginTop="25dp"
-        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
 
         android:visibility="invisible" />
 
+    <!--Add Icon-->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/addIcon"
+        android:src="@drawable/add"
+
+        android:layout_below="@id/answer4"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
