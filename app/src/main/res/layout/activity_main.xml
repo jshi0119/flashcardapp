@@ -87,35 +87,35 @@
 
     <!--Refresh icon-->
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/refreshIcon"
         android:src="@drawable/refresh"
 
 
-        android:layout_below="@id/answer4"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="25dp"
         android:layout_alignParentStart="true" />
 
     <!--Visibility icon-->
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/visibleIcon"
         android:src="@drawable/visible"
 
-        android:layout_below="@id/answer4"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="25dp"
         android:layout_centerHorizontal="true" />
 
     <!--Invisibility Icon-->
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/invisibleIcon"
         android:src="@drawable/invisible"
 
-        android:layout_below="@id/answer4"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="25dp"
         android:layout_centerHorizontal="true"
 
@@ -123,12 +123,12 @@
 
     <!--Add Icon-->
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/addIcon"
         android:src="@drawable/add"
 
-        android:layout_below="@id/answer4"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="25dp"
         android:layout_alignParentEnd="true" />
 
