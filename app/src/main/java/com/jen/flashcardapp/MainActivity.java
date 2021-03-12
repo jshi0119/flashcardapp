@@ -77,10 +77,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AddCardActivity.class);
-                MainActivity.this.startActivity(intent);
+                MainActivity.this.startActivityForResult(intent, 100);
             }
         });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 100) {
+            String question = data.getExtras().getString("question");
+            String correctAns = data.getExtras().getString("correctAns");
+            String wrongAns1 = data.getExtras().getString("wrongAns1");
+            String wrongAns2 = data.getExtras().getString("wrongAns2");
+            String wrongAns3 = data.getExtras().getString("wrongAns3");
+
+            ((TextView)(findViewById(R.id.flashcardQuestion))).setText(question);
+            ((TextView)(findViewById(R.id.answer1))).setText(correctAns);
+            ((TextView)(findViewById(R.id.answer2))).setText(wrongAns1);
+            ((TextView)(findViewById(R.id.answer3))).setText(wrongAns2);
+            ((TextView)(findViewById(R.id.answer4))).setText(wrongAns3);
+        }
+    }
+
 
     /**
      * Helper method for when the incorrect answer is clicked.

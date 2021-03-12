@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Flashcard App</string>
+    <string name="what_was_the_easter_bunny_s_original_name">What was the Easter Bunny\'s original name?</string>
+    <string name="osterhase">Osterhase</string>
+    <string name="rudolph">Rudolph</string>
+    <string name="peter_cottontail">Peter Cottontail</string>
+    <string name="saint_hazel">Saint Hazel</string>
+    <string name="todo">TODO</string>
 </resources>
