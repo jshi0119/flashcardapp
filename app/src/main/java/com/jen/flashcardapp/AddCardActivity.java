@@ -19,6 +19,10 @@ public class AddCardActivity extends AppCompatActivity {
         ((ImageView)findViewById(R.id.cancelIcon)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String question = "cancel";
+                Intent data = new Intent();
+                data.putExtra("question", question);
+                setResult(RESULT_OK, data);
                 finish();
             }
         });
