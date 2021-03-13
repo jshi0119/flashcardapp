@@ -8,15 +8,27 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+    FlashcardDatabase flashcardDatabase;
+    List<Flashcard> allFlashcards;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        flashcardDatabase = new FlashcardDatabase(this);
+        allFlashcards = flashcardDatabase.getAllCards();
+
         TextView question = findViewById(R.id.flashcardQuestion);
         TextView answer = findViewById(R.id.flashcardAnswer);
+
+        if (allFlashcards != null && allFlashcards.size() > 0) {
+            question.setText(allFlashcards.get(0).getQuestion());
+            answer.setText(allFlashcards.get(0).getAnswer());
+        }
 
         //When question is clicked, show correct answer
         question.setOnClickListener(new View.OnClickListener() {
@@ -49,16 +61,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == 100) {
             if (!data.getExtras().getString("question").equals("cancel")) {
                 String question = data.getExtras().getString("question");
                 String correctAns = data.getExtras().getString("correctAns");
-                String wrongAns1 = data.getExtras().getString("wrongAns1");
-                String wrongAns2 = data.getExtras().getString("wrongAns2");
-                String wrongAns3 = data.getExtras().getString("wrongAns3");
 
-                ((TextView) (findViewById(R.id.flashcardQuestion))).setText(question);
-                ((TextView) (findViewById(R.id.flashcardAnswer))).setText(correctAns);
+                ((TextView) findViewById(R.id.flashcardQuestion)).setText(question);
+                ((TextView) findViewById(R.id.flashcardAnswer)).setText(correctAns);
+
+                flashcardDatabase.insertCard(new Flashcard(question, correctAns));
+                allFlashcards = flashcardDatabase.getAllCards();
             }
         }
     }
