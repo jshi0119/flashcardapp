@@ -33,17 +33,11 @@ public class AddCardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String question = ((EditText) findViewById(R.id.questionInput)).getText().toString();
-                String correctAns = ((EditText) findViewById(R.id.answerInput1)).getText().toString();
-                String wrongAns1 = ((EditText) findViewById(R.id.answerInput2)).getText().toString();
-                String wrongAns2 = ((EditText) findViewById(R.id.answerInput3)).getText().toString();
-                String wrongAns3 = ((EditText) findViewById(R.id.answerInput4)).getText().toString();
+                String correctAns = ((EditText) findViewById(R.id.answerInput)).getText().toString();
 
                 Intent data = new Intent();
                 data.putExtra("question", question);
                 data.putExtra("correctAns", correctAns);
-                data.putExtra("wrongAns1", wrongAns1);
-                data.putExtra("wrongAns2", wrongAns2);
-                data.putExtra("wrongAns3", wrongAns3);
 
                 setResult(RESULT_OK, data);
                 finish();

@@ -10,116 +10,30 @@
     <!--Flashcard question-->
     <TextView
         android:id="@+id/flashcardQuestion"
-        android:background="@drawable/question_bg"
         android:padding="5dp"
         android:layout_marginBottom="40dp"
 
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="match_parent"
 
         android:text="@string/what_was_the_easter_bunny_s_original_name"
         android:textSize="40sp"
         android:gravity="center"/>
 
-    <!--Answer choice 1-->
+    <!--Flashcard answer-->
     <TextView
-        android:id="@+id/answer1"
-        android:background="#E2E0E5"
+        android:id="@+id/flashcardAnswer"
         android:padding="5dp"
         android:gravity="center"
 
         android:layout_marginBottom="25dp"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="match_parent"
         android:layout_below="@+id/flashcardQuestion"
 
-
+        android:visibility="gone"
         android:text="@string/osterhase"
         android:textSize="40sp" />
-
-    <!--Answer choice 2-->
-    <TextView
-        android:id="@+id/answer2"
-        android:background="#E2E0E5"
-        android:padding="5dp"
-        android:gravity="center"
-
-        android:layout_marginBottom="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/answer1"
-
-
-        android:text="@string/rudolph"
-        android:textSize="40sp" />
-
-    <!--Answer choice 3-->
-    <TextView
-        android:id="@+id/answer3"
-        android:background="#E2E0E5"
-        android:padding="5dp"
-        android:gravity="center"
-
-        android:layout_marginBottom="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/answer2"
-
-
-        android:text="@string/peter_cottontail"
-        android:textSize="40sp" />
-
-    <!--Answer choice 4-->
-    <TextView
-        android:id="@+id/answer4"
-        android:background="#E2E0E5"
-        android:padding="5dp"
-        android:gravity="center"
-
-        android:layout_marginBottom="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/answer3"
-
-
-        android:text="@string/saint_hazel"
-        android:textSize="40sp" />
-
-    <!--Refresh icon-->
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/refreshIcon"
-        android:src="@drawable/refresh"
-
-
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="25dp"
-        android:layout_alignParentStart="true" />
-
-    <!--Visibility icon-->
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/visibleIcon"
-        android:src="@drawable/visible"
-
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true" />
-
-    <!--Invisibility Icon-->
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/invisibleIcon"
-        android:src="@drawable/invisible"
-
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true"
-
-        android:visibility="invisible" />
 
     <!--Add Icon-->
     <ImageView
