@@ -8,11 +8,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     FlashcardDatabase flashcardDatabase;
     List<Flashcard> allFlashcards;
+    int currentCardDisplayedIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,30 @@ public class MainActivity extends AppCompatActivity {
             question.setText(allFlashcards.get(0).getQuestion());
             answer.setText(allFlashcards.get(0).getAnswer());
         }
+
+        findViewById(R.id.nextIcon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (allFlashcards.size() == 0) {
+                    return;
+                }
+
+                currentCardDisplayedIndex++;
+
+                if(currentCardDisplayedIndex >= allFlashcards.size()) {
+                    Snackbar.make(question,"You've reached the end of the cards, going back to start.",
+                            Snackbar.LENGTH_SHORT)
+                            .show();
+                    currentCardDisplayedIndex = 0;
+                }
+
+                allFlashcards = flashcardDatabase.getAllCards();
+                Flashcard flashcard = allFlashcards.get(currentCardDisplayedIndex);
+
+                question.setText(flashcard.getAnswer());
+                answer.setText(flashcard.getQuestion());
+            }
+        });
 
         //When question is clicked, show correct answer
         question.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 question.setVisibility((View.VISIBLE));
             }
         });
-
 
         ((ImageView)findViewById(R.id.addIcon)).setOnClickListener(new View.OnClickListener() {
             @Override
