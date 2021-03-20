@@ -54,15 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
                 question.setText(flashcard.getAnswer());
                 answer.setText(flashcard.getQuestion());
-            }
-        });
 
-        //When question is clicked, show correct answer
-        question.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                answer.setVisibility(View.VISIBLE);
                 question.setVisibility(View.GONE);
-                answer.setVisibility((View.VISIBLE));
             }
         });
 
@@ -71,7 +65,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 answer.setVisibility(View.GONE);
-                question.setVisibility((View.VISIBLE));
+                question.setVisibility(View.VISIBLE);
+            }
+        });
+
+        //When question is clicked, show correct answer
+        question.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                question.setVisibility(View.GONE);
+                answer.setVisibility(View.VISIBLE);
             }
         });
 
