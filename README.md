@@ -6,7 +6,7 @@
 User can now save cards into the app and scroll through them even after the app has been closed and reopened.
 
 ### App Walk-though
-<img src="https://i.imgur.com/7p8fa3F.gif" width=200><br>
+<img src="https://i.imgur.com/T1z4q80.mp4" width=200><br>
 
 ## Required
 - [x] User can create a card and still see their created card when the app is relaunched.
