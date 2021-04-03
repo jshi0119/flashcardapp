@@ -1,8 +1,12 @@
 package com.jen.flashcardapp;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewAnimationUtils;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -52,8 +56,29 @@ public class MainActivity extends AppCompatActivity {
                 allFlashcards = flashcardDatabase.getAllCards();
                 Flashcard flashcard = allFlashcards.get(currentCardDisplayedIndex);
 
+                final Animation leftOutAnim = AnimationUtils.loadAnimation(v.getContext(), R.anim.left_out);
+                final Animation rightInAnim = AnimationUtils.loadAnimation(v.getContext(), R.anim.right_in);
+
+                answer.startAnimation(leftOutAnim);
+
                 question.setText(flashcard.getAnswer());
                 answer.setText(flashcard.getQuestion());
+
+
+                leftOutAnim.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        answer.startAnimation(rightInAnim);
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+                    }
+                });
 
                 answer.setVisibility(View.VISIBLE);
                 question.setVisibility(View.GONE);
@@ -64,8 +89,18 @@ public class MainActivity extends AppCompatActivity {
         answer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int cx = question.getWidth() / 2;
+                int cy = question.getHeight() / 2;
+
+                float finalRadius = (float) Math.hypot(cx, cy);
+
+                Animator anim = ViewAnimationUtils.createCircularReveal(question, cx, cy, 0f, finalRadius);
+
                 answer.setVisibility(View.GONE);
                 question.setVisibility(View.VISIBLE);
+
+                anim.setDuration(2000);
+                anim.start();
             }
         });
 
@@ -73,8 +108,18 @@ public class MainActivity extends AppCompatActivity {
         question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int cx = answer.getWidth() / 2;
+                int cy = answer.getHeight() / 2;
+
+                float finalRadius = (float) Math.hypot(cx, cy);
+
+                Animator anim = ViewAnimationUtils.createCircularReveal(answer, cx, cy, 0f, finalRadius);
+
                 question.setVisibility(View.GONE);
                 answer.setVisibility(View.VISIBLE);
+
+                anim.setDuration(2000);
+                anim.start();
             }
         });
 
